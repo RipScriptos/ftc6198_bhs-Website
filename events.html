@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Events • FTC Team 6198 • BHS (BSD220)</title>
+  <meta name="description" content="Upcoming competitions, outreach engagements, and media galleries for FTC Team 6198." />
+  <meta property="og:title" content="Events • FTC Team 6198" />
+  <meta property="og:description" content="Stay informed about competition dates, outreach events, and photo galleries from Barrington High School's FTC Team 6198." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#1f7a1f" />
+  <style>
+    :root{
+      --accent:#2e8b57;
+      --accent-dark:#1f6a3f;
+      --muted:#6b7280;
+      --bg:#f7faf7;
+      --card:#ffffff;
+      --max-width:1100px;
+      --radius:12px;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#f5fbf5 0%,var(--bg) 100%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:20px;}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:18px;}
+    .logo{width:84px;height:84px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:grid;place-items:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 20px rgba(31,106,63,0.12);}
+    h1{margin:0;font-size:24px}
+    .sub{color:var(--muted);font-size:14px}
+    nav{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    a.btn{text-decoration:none;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(15,23,42,0.06);font-size:13px;color:var(--accent-dark);}
+    main{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:22px}
+    @media (max-width:900px){main{grid-template-columns:1fr}.right-col{order:2}}
+    .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(12,15,20,0.04)}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .muted{color:var(--muted);font-size:13px}
+    .muted-block{color:var(--muted);font-size:13px;margin-top:8px}
+    ul{margin:0;padding-left:18px}
+    li{margin-bottom:6px;font-size:14px}
+    .timeline{position:relative;padding-left:18px}
+    .timeline::before{content:"";position:absolute;left:3px;top:4px;bottom:4px;width:2px;background:rgba(31,106,63,0.2)}
+    .timeline-item{position:relative;margin-bottom:16px;padding-left:12px}
+    .timeline-item::before{content:"";position:absolute;left:-15px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px;padding:18px 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">6198</div>
+      <div>
+        <h1>Events & Outreach</h1>
+        <div class="sub">Competition calendar, scrimmages, and community appearances for Team 6198.</div>
+        <nav aria-label="Primary navigation">
+          <a class="btn" href="index.html">Home</a>
+          <a class="btn" href="status.html">Status</a>
+          <a class="btn" href="sponsors.html">Sponsors</a>
+          <a class="btn" href="events.html">Events</a>
+          <a class="btn" href="team.html">Team</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <article class="card" aria-labelledby="upcoming">
+          <div class="section-title">
+            <h2 id="upcoming" style="margin:0;font-size:18px">Upcoming Schedule</h2>
+            <span class="muted">Fall 2025</span>
+          </div>
+          <ul>
+            <li><strong>Oct 12</strong> • Sponsor Demo Night • BHS Gym • 6:00 PM</li>
+            <li><strong>Oct 26</strong> • Scrimmage vs Teams 8855 & 11414 • Makerspace 220</li>
+            <li><strong>Nov 7-8</strong> • Regional Qualifier • Central Convention Center</li>
+            <li><strong>Nov 21</strong> • Community STEM Expo • Station Middle School</li>
+          </ul>
+        </article>
+
+        <article class="card" aria-labelledby="season-timeline" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="season-timeline" style="margin:0;font-size:18px">Season Timeline</h2>
+            <span class="muted">Key Milestones</span>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item">
+              <strong>September</strong>
+              <p class="muted-block">Kickoff strategy workshop and drivetrain proof of concept complete.</p>
+            </div>
+            <div class="timeline-item">
+              <strong>October</strong>
+              <p class="muted-block">Robot iteration cycle, sponsor showcase, and second scrimmage.</p>
+            </div>
+            <div class="timeline-item">
+              <strong>November</strong>
+              <p class="muted-block">Regional qualifier, outreach expo, and engineering portfolio submission.</p>
+            </div>
+            <div class="timeline-item">
+              <strong>December</strong>
+              <p class="muted-block">League championships and holiday robotics camp for future FTC teams.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" id="gallery" aria-labelledby="gallery-heading" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="gallery-heading" style="margin:0;font-size:18px">Photo Gallery</h2>
+            <span class="muted">Highlights</span>
+          </div>
+          <div class="gallery" role="list">
+            <img src="https://via.placeholder.com/320x200?text=Qualifier+Ready" alt="Robotics team in pit area" />
+            <img src="https://via.placeholder.com/320x200?text=Coding+Session" alt="Programming subteam reviewing code" />
+            <img src="https://via.placeholder.com/320x200?text=Scrimmage" alt="Robot driving during scrimmage" />
+            <img src="https://via.placeholder.com/320x200?text=Community+Demo" alt="Community outreach demo" />
+            <img src="https://via.placeholder.com/320x200?text=Pit+Setup" alt="Pit setup with sponsors banner" />
+            <img src="https://via.placeholder.com/320x200?text=Award" alt="Team accepting award on field" />
+          </div>
+          <p class="muted-block">Submit event photos to <a href="mailto:media.ftc6198@example.com">media.ftc6198@example.com</a> for inclusion.</p>
+        </article>
+      </section>
+
+      <aside class="right-col" style="width:100%">
+        <div class="card">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Volunteer</h3>
+            <span class="muted">Sign Up</span>
+          </div>
+          <p class="muted-block">Parents and alumni can volunteer for event logistics, scouting, and judge interviews. Email <a href="mailto:volunteer.ftc6198@example.com">volunteer.ftc6198@example.com</a>.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Event Prep Checklist</h3>
+          </div>
+          <ul>
+            <li>Charge all robot and controller batteries</li>
+            <li>Print pit schedule and scouting sheets</li>
+            <li>Pack spare hardware, tools, and safety gear</li>
+            <li>Confirm transportation and meal plan</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Streaming & Results</h3>
+          </div>
+          <ul>
+            <li><a href="https://ftc-events.firstinspires.org/" target="_blank" rel="noopener">FTC Event Results</a></li>
+            <li><a href="https://www.twitch.tv/firstinspires" target="_blank" rel="noopener">FIRSTinspires Twitch</a></li>
+            <li><a href="status.html">Read post-event recaps</a></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> FTC Team 6198 • BHS — BSD220</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
