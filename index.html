@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FTC Team 6198 • BHS (BSD220)</title>
+  <meta name="description" content="FTC Team 6198 — BHS. Robotics team info, roster, schedule, sponsors, and resources for BSD220." />
+  <!-- Open Graph -->
+  <meta property="og:title" content="FTC Team 6198 • BHS (BSD220)" />
+  <meta property="og:description" content="Robotics team 6198 at BHS — BSD220: meet the team, view the robot gallery, and find resources." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#1f7a1f" />
+
+  <!-- Basic styling (feel free to replace with your own CSS or Tailwind) -->
+  <style>
+    :root{
+      --accent: #2e8b57; /* green */
+      --accent-dark: #1f6a3f;
+      --muted:#6b7280;
+      --bg:#f7faf7;
+      --card:#ffffff;
+      --max-width:1100px;
+      --radius:12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#f5fbf5 0%,var(--bg) 100%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:20px;}
+    header{
+      display:flex;gap:16px;align-items:center;margin-bottom:18px;
+    }
+    .logo{
+      width:84px;height:84px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+      display:grid;place-items:center;color:white;font-weight:700;font-size:20px;
+      box-shadow:0 6px 20px rgba(31,106,63,0.12);
+    }
+    h1{margin:0;font-size:24px}
+    .sub{color:var(--muted);font-size:14px}
+    nav{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    a.btn{
+      text-decoration:none;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(15,23,42,0.06);
+      font-size:13px;color:var(--accent-dark);
+    }
+    main{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:22px}
+    @media (max-width:900px){ main{grid-template-columns:1fr} .right-col{order:2} }
+    .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(12,15,20,0.04)}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .muted{color:var(--muted);font-size:13px}
+    /* Roster table */
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px 6px;text-align:left;border-bottom:1px solid #eef2f6;font-size:14px}
+    th{font-weight:700;color:#0b1220}
+    .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:#f1f8f1;border:1px solid rgba(31,106,63,0.08);font-size:13px}
+    /* gallery */
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+    .gallery img{width:100%;height:84px;object-fit:cover;border-radius:8px}
+    @media (max-width:600px){ .gallery{grid-template-columns:repeat(2,1fr)} .gallery img{height:72px} }
+
+    /* footer */
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px;padding:18px 0}
+    /* small utilities */
+    .muted-block{color:var(--muted);font-size:13px;margin-top:8px}
+    .center{display:flex;align-items:center;gap:10px}
+    .cta{background:var(--accent);color:#fff;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:600}
+    .sponsor-list{display:flex;flex-direction:column;gap:8px}
+    .sponsor{padding:8px;border-radius:8px;background:#fbfffb;border:1px solid rgba(0,0,0,0.03)}
+    .small{font-size:12px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">6198</div>
+      <div>
+        <h1>FTC Team 6198 — BHS <span class="muted" style="font-weight:600">• BSD220</span></h1>
+        <div class="sub">Building robots. Learning code. Competing with heart.</div>
+        <nav aria-label="Primary navigation">
+          <a class="btn" href="#roster">Roster</a>
+          <a class="btn" href="#schedule">Schedule</a>
+          <a class="btn" href="#gallery">Gallery</a>
+          <a class="btn" href="#resources">Resources</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- LEFT / main content -->
+      <section>
+        <article id="about" class="card" aria-labelledby="about-heading">
+          <div class="section-title">
+            <h2 id="about-heading" style="margin:0;font-size:18px">About Team 6198</h2>
+            <span class="pill">FTC</span>
+          </div>
+          <p class="muted-block">
+            FTC Team 6198 is the varsity robotics team from BHS. We design, build, and program competitive robots while learning engineering, teamwork, and leadership. Our home workspace is <strong>BSD220</strong> — welcome to drop by during club hours.
+          </p>
+        </article>
+
+        <article id="roster" class="card" aria-labelledby="roster-heading" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="roster-heading" style="margin:0;font-size:18px">Roster (2025 Season)</h2>
+            <span class="muted small">Subject to updates</span>
+          </div>
+
+          <!-- Editable roster table -->
+          <table role="table" aria-label="Team roster">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Grade</th>
+              </tr>
+            </thead>
+            <tbody id="roster-body">
+              <tr><td>Alex Johnson</td><td>Driver & Programmer</td><td>12</td></tr>
+              <tr><td>Riley Martinez</td><td>Lead Builder</td><td>11</td></tr>
+              <tr><td>Sam Patel</td><td>Electrical Lead</td><td>10</td></tr>
+              <tr><td>Jordan Lee</td><td>Strategy & Scouting</td><td>12</td></tr>
+              <tr><td>Morgan Chen</td><td>CAD & Documentation</td><td>11</td></tr>
+            </tbody>
+          </table>
+
+          <p class="muted-block small">Want to update the roster? Edit this file and push to GitHub or contact the team lead.</p>
+        </article>
+
+        <article id="schedule" class="card" aria-labelledby="schedule-heading" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="schedule-heading" style="margin:0;font-size:18px">Upcoming (Sample) Schedule</h2>
+            <span class="muted small">Check with mentors for latest dates</span>
+          </div>
+          <ul style="margin:0;padding-left:18px">
+            <li><strong>Weekly Build Session —</strong> Tuesdays & Thursdays, 3:30–5:30 PM (BSD220)</li>
+            <li><strong>Sponsor Demo —</strong> Oct 12, 2025 — BHS Gym</li>
+            <li><strong>Regional Qualifier —</strong> Nov 7–8, 2025 — Central Convention Center</li>
+          </ul>
+        </article>
+
+        <article id="gallery" class="card" aria-labelledby="gallery-heading" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="gallery-heading" style="margin:0;font-size:18px">Robot Gallery</h2>
+            <a href="#gallery" class="small">View more photos</a>
+          </div>
+          <div class="gallery" role="list">
+            <img alt="Robot closeup" src="https://via.placeholder.com/320x200?text=Robot+1" />
+            <img alt="Team at competition" src="https://via.placeholder.com/320x200?text=Team+at+Comp" />
+            <img alt="CAD render" src="https://via.placeholder.com/320x200?text=CAD+Render" />
+            <img alt="Practice match" src="https://via.placeholder.com/320x200?text=Practice+Match" />
+            <img alt="Electronics board" src="https://via.placeholder.com/320x200?text=Electronics" />
+            <img alt="Awards" src="https://via.placeholder.com/320x200?text=Awards" />
+          </div>
+          <p class="muted-block small">To add real photos, replace the <code>src</code> URLs with images stored in your repo or an image host.</p>
+        </article>
+
+        <article id="resources" class="card" aria-labelledby="resources-heading" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="resources-heading" style="margin:0;font-size:18px">Resources & Links</h2>
+          </div>
+          <ul>
+            <li><a href="#" target="_blank" rel="noopener">Team GitHub (code & docs)</a></li>
+            <li><a href="#" target="_blank" rel="noopener">Engineering Notebook Template</a></li>
+            <li><a href="#" target="_blank" rel="noopener">FTC Game Manual & Rules</a></li>
+          </ul>
+          <p class="muted-block small">Pro tip: keep manuals & docs in a repo folder like <code>/docs/</code> so they publish with GitHub Pages.</p>
+        </article>
+      </section>
+
+      <!-- RIGHT / sidebar -->
+      <aside class="right-col" style="width:100%">
+        <div class="card">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Mentors & Contacts</h3>
+            <span class="muted small">BSD220</span>
+          </div>
+          <div class="muted-block">
+            <strong>Head Mentor:</strong> Ms. Taylor (taylor@example.com)<br>
+            <strong>Student Lead:</strong> Alex Johnson (alex@example.com)
+          </div>
+
+          <hr style="margin:12px 0;border:none;border-top:1px solid #eef2f6" />
+
+          <div>
+            <div class="muted small">Quick actions</div>
+            <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
+              <a class="cta" href="mailto:taylor@example.com">Email Mentor</a>
+              <a class="btn" href="#roster">Edit Roster</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Sponsors</h3>
+            <span class="muted small">Supporters</span>
+          </div>
+          <div class="sponsor-list">
+            <div class="sponsor"><strong>Acme Manufacturing</strong> — Parts & mentorship</div>
+            <div class="sponsor"><strong>BHS PTO</strong> — Funding</div>
+            <div class="sponsor"><strong>Local Makerspace</strong> — Workspace access</div>
+          </div>
+          <p class="muted-block small">Want to sponsor? Contact the Head Mentor.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Location</h3>
+            <span class="muted small">BSD220 — BHS</span>
+          </div>
+          <p class="muted-block small" style="margin:0">Club meets in BSD220 — the robotics lab in the Tech Wing. Check the schedule or contact mentors for open hours.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <h3 style="margin:0;font-size:16px">Follow / Repo</h3>
+          <p class="muted-block small" style="margin:8px 0 0">
+            GitHub: <a href="#" target="_blank" rel="noopener">github.com/your-org/ftc-6198</a><br>
+            Instagram: <a href="#" target="_blank" rel="noopener">@ftc6198_bhs</a>
+          </p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div class="small">© <span id="year"></span> FTC Team 6198 • BHS — BSD220 • Built for GitHub Pages</div>
+      <div class="small muted">This site is maintained by team members. To contribute, submit a PR to the repository.</div>
+    </footer>
+  </div>
+
+  <!-- Minimal JS for a couple utilities -->
+  <script>
+    // update year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // small client-side helper: add roster rows (if needed)
+    function addRosterRow(name, role, grade){
+      const tbody = document.getElementById('roster-body');
+      const tr = document.createElement('tr');
+      tr.innerHTML = '<td>'+escapeHtml(name)+'</td><td>'+escapeHtml(role)+'</td><td>'+escapeHtml(grade)+'</td>';
+      tbody.appendChild(tr);
+    }
+    function escapeHtml(str){
+      return String(str).replace(/[&<>"']/g, function(m){
+        return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+      });
+    }
+
+    // Example: uncomment to add a row dynamically
+    // addRosterRow('New Member','Strategy',10);
+  </script>
+</body>
+</html>
