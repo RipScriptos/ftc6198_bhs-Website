@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Status • FTC Team 6198 • BHS (BSD220)</title>
+  <meta name="description" content="Status updates and blog posts for FTC Team 6198 at BHS in Barrington School District 220." />
+  <meta property="og:title" content="Status • FTC Team 6198" />
+  <meta property="og:description" content="Follow the latest build logs, match recaps, and outreach updates from FTC Team 6198." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#1f7a1f" />
+  <style>
+    :root{
+      --accent:#2e8b57;
+      --accent-dark:#1f6a3f;
+      --muted:#6b7280;
+      --bg:#f7faf7;
+      --card:#ffffff;
+      --max-width:1100px;
+      --radius:12px;
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:linear-gradient(180deg,#f5fbf5 0%,var(--bg) 100%);
+      color:#0f172a;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:20px;}
+    header{display:flex;gap:16px;align-items:center;margin-bottom:18px;}
+    .logo{width:84px;height:84px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:grid;place-items:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 20px rgba(31,106,63,0.12);}
+    h1{margin:0;font-size:24px}
+    .sub{color:var(--muted);font-size:14px}
+    nav{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
+    a.btn{text-decoration:none;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(15,23,42,0.06);font-size:13px;color:var(--accent-dark);}
+    main{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:22px}
+    @media (max-width:900px){main{grid-template-columns:1fr}.right-col{order:2}}
+    .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(12,15,20,0.04)}
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+    .muted{color:var(--muted);font-size:13px}
+    .muted-block{color:var(--muted);font-size:13px;margin-top:8px}
+    .tag{display:inline-block;padding:4px 10px;border-radius:999px;background:#f1f8f1;border:1px solid rgba(31,106,63,0.08);font-size:12px;font-weight:600;color:var(--accent-dark)}
+    .post-meta{display:flex;gap:10px;color:var(--muted);font-size:12px;margin-top:4px}
+    ul{margin:0;padding-left:18px}
+    li{margin-bottom:6px;font-size:14px}
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px;padding:18px 0}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo" aria-hidden="true">6198</div>
+      <div>
+        <h1>Status Center</h1>
+        <div class="sub">Build logs, competition recaps, and outreach notes from FTC Team 6198.</div>
+        <nav aria-label="Primary navigation">
+          <a class="btn" href="index.html">Home</a>
+          <a class="btn" href="status.html">Status</a>
+          <a class="btn" href="sponsors.html">Sponsors</a>
+          <a class="btn" href="events.html">Events</a>
+          <a class="btn" href="team.html">Team</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <article class="card" aria-labelledby="week-3">
+          <div class="section-title">
+            <h2 id="week-3" style="margin:0;font-size:18px">Week 3 Build Log</h2>
+            <span class="tag">October 2025</span>
+          </div>
+          <p>Drive base tuning is complete and autonomous prototypes are running consistent two-piece cycles. Programmers integrated AprilTag localization and shared code snippets with JV team 16274.</p>
+          <div class="post-meta"><span>Author: Alex Johnson</span><span>Category: Build</span></div>
+          <ul>
+            <li>Added revised intake rollers with TPU spacers</li>
+            <li>Completed sensor harness labeling per safety checklist</li>
+            <li>Published calibration guide in the team notebook</li>
+          </ul>
+        </article>
+
+        <article class="card" aria-labelledby="qualifier-recap" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="qualifier-recap" style="margin:0;font-size:18px">Qualifier #1 Recap</h2>
+            <span class="tag">Event Recap</span>
+          </div>
+          <p>We ranked 4th in quals with a 6-1 record and advanced to finals as captain of the 2nd alliance. Autonomous consistently scored 20+ points and endgame hang was above 90% success.</p>
+          <div class="post-meta"><span>Author: Riley Martinez</span><span>Category: Competition</span></div>
+          <ul>
+            <li>Alliance partners: 7457 TechnoBears, 11414 RoboKats</li>
+            <li>Awards: Motivate Award Finalist, Collins Aerospace Innovate Award</li>
+            <li>Action item: iterate on drone launcher for faster reloads</li>
+          </ul>
+        </article>
+
+        <article class="card" aria-labelledby="outreach-update" style="margin-top:14px">
+          <div class="section-title">
+            <h2 id="outreach-update" style="margin:0;font-size:18px">Community Outreach Update</h2>
+            <span class="tag">Outreach</span>
+          </div>
+          <p>Students led a robot demo at the Barrington STEM Expo. Over 120 families interacted with our pit display and signed up for our community newsletter.</p>
+          <div class="post-meta"><span>Author: Morgan Chen</span><span>Category: Outreach</span></div>
+          <ul>
+            <li>Secured mentorship slot with Barrington Makers Lab</li>
+            <li>Collected 35 new contacts for middle school robotics workshops</li>
+            <li>Shared FIRST scholarships information with attendees</li>
+          </ul>
+        </article>
+      </section>
+
+      <aside class="right-col" style="width:100%">
+        <div class="card">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Update Cadence</h3>
+            <span class="muted">Weekly</span>
+          </div>
+          <p class="muted-block">Core build updates drop every Friday after practice. Competition recaps are posted within 48 hours of events.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Submit an Update</h3>
+            <span class="muted">Team Only</span>
+          </div>
+          <p class="muted-block">Send draft posts and media to <a href="mailto:media.ftc6198@example.com">media.ftc6198@example.com</a> for review. Include match numbers, stats, and links to videos.</p>
+        </div>
+
+        <div class="card" style="margin-top:14px">
+          <div class="section-title">
+            <h3 style="margin:0;font-size:16px">Archive</h3>
+          </div>
+          <ul>
+            <li><a href="#week-3">Build Season 2025</a></li>
+            <li><a href="#qualifier-recap">Qualifier #1</a></li>
+            <li><a href="#outreach-update">Outreach Highlights</a></li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> FTC Team 6198 • BHS — BSD220</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
