@@ -48,38 +48,74 @@
       transition: background 0.4s ease, color 0.4s ease;
     }
 
-    .wrap { max-width: var(--max-width); margin: 28px auto; padding: 20px; }
-    header { display: flex; gap: 16px; align-items: center; margin-bottom: 18px; justify-content: space-between; flex-wrap: wrap; }
+    /* Wrapper for page content */
+    .wrap { 
+      max-width: var(--max-width); 
+      margin: 28px auto; 
+      padding: 20px; 
+    }
+    /* HEADER SECTION */
+    header { 
+      display: flex; 
+      gap: 16px; 
+      align-items: center; 
+      margin-bottom: 18px; 
+      justify-content: space-between; 
+      flex-wrap: wrap; }
+    
     .logo {
-      width: 84px; height: 84px; border-radius: 10px;
+      width: 84px; 
+      height: 84px; 
+      border-radius: 10px;
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
-      display: grid; place-items: center; color: white;
-      font-weight: 700; font-size: 20px;
+      display: grid; 
+      place-items: center; 
+      color: white;
+      font-weight: 700; 
+      font-size: 20px;
       box-shadow: 0 6px 20px rgba(31, 106, 63, 0.12);
     }
+    
     h1 { margin: 0; font-size: 24px; }
     .sub { color: var(--muted); font-size: 14px; }
-    nav { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; }
-    a.btn {
-      text-decoration: none; padding: 8px 12px; border-radius: 10px;
-      background: transparent; border: 1px solid rgba(15, 23, 42, 0.06);
-      font-size: 13px; color: var(--accent-dark);
-      transition: 0.2s;
+    
+    nav { 
+      margin-top: 12px; 
+      display: flex; 
+      gap: 8px; 
+      flex-wrap: wrap; 
     }
-    a.btn:hover { background: var(--accent); color: white; }
+    
+    /* Reusable button style */
+    a.btn {
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      font-size: 13px;
+      color: var(--accent-dark);
+      transition: background 0.2s, color 0.2s;
+    }
+    a.btn:hover { 
+      background: var(--accent-dark); 
+      color: white; }
 
     /* DARK MODE TOGGLE BUTTON */
     .dark-toggle {
-      cursor: pointer;
+      margin-left: auto;
+      background: var(--accent-dark);
       border: none;
-      background: var(--accent);
       color: white;
-      border-radius: 10px;
-      padding: 6px 12px;
-      font-size: 13px;
-      transition: 0.3s;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: 0.2s;
     }
-    .dark-toggle:hover { background: var(--accent-dark); }
+    .dark-toggle:hover { 
+      background: var(--accent); 
+    }
 
     main { display: grid; grid-template-columns: 1fr 320px; gap: 20px; margin-top: 22px; }
     @media (max-width: 900px) { main { grid-template-columns: 1fr; } .right-col { order: 2; } }
@@ -137,7 +173,7 @@
       </div>
 
       <!-- DARK MODE TOGGLE BUTTON -->
-      <button class="dark-toggle" id="themeToggle">🌙 Dark Mode</button>
+      <button id="themeToggle" class="dark-toggle">🌙</button>
     </header>
 
     <!-- MAIN CONTENT AREA -->
@@ -259,13 +295,13 @@
     // Load user preference
     if (localStorage.getItem('theme') === 'dark') {
       root.setAttribute('data-theme', 'dark');
-      toggle.textContent = '☀️ Light Mode';
+      toggle.textContent = '☀️';
     }
 
     toggle.addEventListener('click', () => {
       const isDark = root.getAttribute('data-theme') === 'dark';
       root.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      toggle.textContent = isDark ? '🌙 Dark Mode' : '☀️ Light Mode';
+      toggle.textContent = isDark ? '🌙' : '☀️';
       localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
   </script>
