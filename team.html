@@ -11,27 +11,42 @@
   <meta name="theme-color" content="#1f7a1f" />
 
   <style>
-    /* Root Variables and Base Styles */
+    /* Global Theme Variables */
     :root {
       --accent: #2e8b57;
       --accent-dark: #1f6a3f;
       --muted: #6b7280;
       --bg: #f7faf7;
       --card: #ffffff;
+      --text: #0f172a;
       --radius: 12px;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
+
+    /* Dark Mode Variables Override */
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --card: #161b22;
+      --text: #e6edf3;
+      --muted: #9ba1a6;
+      --accent: #3fbf7f;
+      --accent-dark: #2e8b57;
+    }
+
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      background: linear-gradient(180deg, #f5fbf5 0%, var(--bg) 100%);
-      color: #0f172a;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.45;
+      transition: background 0.3s, color 0.3s;
     }
 
     /* Layout Containers */
     .wrap { max-width: 1100px; margin: 28px auto; padding: 20px; }
     header { display: flex; gap: 16px; align-items: center; margin-bottom: 18px; }
+
     .logo {
       width: 84px; height: 84px;
       border-radius: 10px;
@@ -40,8 +55,11 @@
       color: white; font-weight: 700; font-size: 20px;
       box-shadow: 0 6px 20px rgba(31, 106, 63, 0.12);
     }
+
     h1 { margin: 0; font-size: 24px; }
     .sub { color: var(--muted); font-size: 14px; }
+
+    /* Navigation */
     nav {
       margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap;
     }
@@ -53,9 +71,31 @@
       border: 1px solid rgba(15, 23, 42, 0.06);
       font-size: 13px;
       color: var(--accent-dark);
+      transition: background 0.2s, color 0.2s;
+    }
+    a.btn:hover {
+      background: var(--accent-dark);
+      color: white;
     }
 
-    /* Grid + Sticky Layout */
+    /* Dark Mode Toggle Button */
+    .dark-toggle {
+      margin-left: auto;
+      cursor: pointer;
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid rgba(15,23,42,0.06);
+      border-radius: 8px;
+      padding: 6px 10px;
+      background: transparent;
+      transition: background 0.2s, color 0.2s;
+    }
+    .dark-toggle:hover {
+      background: var(--accent-dark);
+      color: white;
+    }
+
+    /* Grid + Layout */
     main {
       display: grid;
       grid-template-columns: 1fr 320px;
@@ -72,12 +112,13 @@
       .right-col { position: static; }
     }
 
-    /* Card Styles */
+    /* Card Components */
     .card {
       background: var(--card);
       padding: 16px;
       border-radius: var(--radius);
       box-shadow: 0 6px 20px rgba(12, 15, 20, 0.04);
+      transition: background 0.3s, color 0.3s;
     }
     .section-title {
       display: flex;
@@ -88,7 +129,7 @@
     .muted { color: var(--muted); font-size: 13px; }
     .muted-block { color: var(--muted); font-size: 13px; margin-top: 8px; }
 
-    /* Team Grid Styles */
+    /* Team Grid & Flip Card Design */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -97,11 +138,7 @@
       text-align: center;
     }
 
-    /* Flip Card Effect */
-    .team-member {
-      perspective: 1000px;
-      cursor: pointer;
-    }
+    .team-member { perspective: 1000px; cursor: pointer; }
     .flip-inner {
       position: relative;
       width: 100%;
@@ -113,6 +150,7 @@
     .team-member.flipped .flip-inner {
       transform: rotateY(180deg);
     }
+
     .flip-front, .flip-back {
       position: absolute;
       width: 100%; height: 100%;
@@ -123,7 +161,9 @@
       padding: 14px;
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
+      transition: background 0.3s, color 0.3s;
     }
+
     .flip-back {
       transform: rotateY(180deg);
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
@@ -131,7 +171,7 @@
       text-align: center;
     }
 
-    /* Team Member Typography */
+    /* Typography for Team Cards */
     .team-member img {
       width: 100%;
       max-width: 140px;
@@ -142,7 +182,7 @@
     .team-member h3 {
       margin: 6px 0 4px;
       font-size: 16px;
-      color: #0f172a;
+      color: var(--text);
     }
     .flip-back h3 { color: white; margin-bottom: 6px; }
     .team-member p {
@@ -152,10 +192,11 @@
     }
     .flip-back p { color: #f1f5f1; font-size: 13px; line-height: 1.4; }
 
+    /* Footer */
     footer {
       margin-top: 22px;
       text-align: center;
-      color: #6b7280;
+      color: var(--muted);
       font-size: 13px;
       padding: 18px 0;
     }
@@ -164,7 +205,7 @@
 
 <body>
   <div class="wrap">
-    <!-- Header and Navigation -->
+    <!-- HEADER SECTION - Includes title, logo, navigation, and dark mode toggle -->
     <header>
       <div class="logo">6198</div>
       <div>
@@ -176,14 +217,15 @@
           <a class="btn" href="sponsors.html">Sponsors</a>
           <a class="btn" href="events.html">Events</a>
           <a class="btn" href="team.html">Team</a>
-          <!-- Uncomment Once Menus Are Required -->
+          <!-- Uncomment future pages when needed -->
           <!-- <a class="btn" href="resources.html">Resources</a> -->
           <!-- <a class="btn" href="mentors.html">Mentors</a> -->
+          <button class="dark-toggle" id="darkToggle" title="Toggle dark mode">🌙</button>
         </nav>
       </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- MAIN CONTENT -->
     <main>
       <section>
         <article class="card" style="margin-top:14px">
@@ -191,9 +233,9 @@
             <h2 style="margin:0;font-size:18px">Decode Season Team Members</h2>
           </div>
 
-          <!-- Team Grid -->
+          <!-- Team Grid (Flip Cards) -->
           <div class="team-grid">
-            <!-- Update Images, Bios, Roles, & Focuses -->
+            <!-- Team Member Cards (Alphabetically Ordered) -->
             <div class="team-member"><div class="flip-inner"><div class="flip-front"><h3>Aiden Hawthorn</h3><img src="images/aiden.jpg" alt="Aiden Hawthorn"><p><strong>Role:</strong> Lead Outreach</p><p><strong>Focus:</strong> Outreach & Events</p></div><div class="flip-back"><h3>Aiden Hawthorn</h3><p>Coordinates outreach operations and strengthens community engagement.</p></div></div></div>
             <div class="team-member"><div class="flip-inner"><div class="flip-front"><h3>Anaiza Zaki</h3><img src="images/anaiza.jpg" alt="Anaiza Zaki"><p><strong>Role:</strong> Lead Designer</p><p><strong>Focus:</strong> Design & Branding</p></div><div class="flip-back"><h3>Anaiza Zaki</h3><p>Handles branding, social media, and visual presentation for the team.</p></div></div></div>
             <div class="team-member"><div class="flip-inner"><div class="flip-front"><h3>Anant Parikh</h3><img src="images/anant.jpg" alt="Anant Parikh"><p><strong>Role:</strong> Lead Finance & Sponsorships</p><p><strong>Focus:</strong> Finances & Public Relations</p></div><div class="flip-back"><h3>Anant Parikh</h3><p>Oversees team finances, sponsorships, and official communications.</p></div></div></div>
@@ -209,7 +251,6 @@
       <aside class="right-col">
         <div class="card" style="margin-top:14px">
           <div class="section-title"><h3 style="margin:0;font-size:16px">Join the Team</h3></div>
-          <!-- Update Email -->
           <p class="muted-block">Interested BHS students can attend an info session or email the <a href="mailto:Email">BHS Robotics Program</a>.</p>
         </div>
 
@@ -224,29 +265,41 @@
       </aside>
     </main>
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
       <div>© <span id="year"></span> FIRST Tech Challenge Team 6198 - Barrington High School Robotics | BSD220</div>
       <div class="muted">This site is maintained by Anant Parikh.</div>
     </footer>
   </div>
 
+  <!-- SCRIPTS - Handles footer year, flip logic, and dark mode toggle -->
   <script>
+    // Automatically display current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Tap-to-flip support for mobile + auto-unflip
+    // Team card flipping logic (supports mobile + click)
     document.addEventListener('click', (event) => {
       const clickedCard = event.target.closest('.team-member');
-
-      // Unflip all cards first
       document.querySelectorAll('.team-member.flipped').forEach(card => {
         if (card !== clickedCard) card.classList.remove('flipped');
       });
+      if (clickedCard) clickedCard.classList.toggle('flipped');
+    });
 
-      // If a card was clicked, toggle it
-      if (clickedCard) {
-        clickedCard.classList.toggle('flipped');
-      }
+    // Dark mode toggle
+    const darkToggle = document.getElementById('darkToggle');
+    const html = document.documentElement;
+
+    // Load saved theme
+    if (localStorage.getItem('theme') === 'dark') {
+      html.setAttribute('data-theme', 'dark');
+    }
+
+    // Toggle between light/dark
+    darkToggle.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
   </script>
 </body>
