@@ -9,94 +9,224 @@
   <meta property="og:description" content="Support opportunities, recognition tiers, and current partners for FTC BHS Robotics Team 6198." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#1f7a1f" />
+
   <style>
-    :root{
-      --accent:#2e8b57;
-      --accent-dark:#1f6a3f;
-      --muted:#6b7280;
-      --bg:#f7faf7;
-      --card:#ffffff;
-      --max-width:1100px;
-      --radius:12px;
-      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+    /* 
+      ===========================
+      Global Theme & Base Styles
+      ===========================
+      Variables define the main color palette and layout spacing.
+      All styles below ensure consistent visual design and responsive layout.
+    */
+    :root {
+      --accent: #2e8b57;
+      --accent-dark: #1f6a3f;
+      --muted: #6b7280;
+      --bg: #f7faf7;
+      --card: #ffffff;
+      --max-width: 1100px;
+      --radius: 12px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,#f5fbf5 0%,var(--bg) 100%);
-      color:#0f172a;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
+
+    /* Reset box model */
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: linear-gradient(180deg, #f5fbf5 0%, var(--bg) 100%);
+      color: #0f172a;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      line-height: 1.45;
     }
-    .wrap{max-width:var(--max-width);margin:28px auto;padding:20px;}
-    header{display:flex;gap:16px;align-items:center;margin-bottom:18px;}
-    .logo{width:84px;height:84px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:grid;place-items:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 20px rgba(31,106,63,0.12);}
-    h1{margin:0;font-size:24px}
-    .sub{color:var(--muted);font-size:14px}
-    nav{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-    a.btn{text-decoration:none;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(15,23,42,0.06);font-size:13px;color:var(--accent-dark);}
-    main{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:22px}
-    @media (max-width:900px){main{grid-template-columns:1fr}.right-col{order:2}}
-    .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(12,15,20,0.04)}
-    .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
-    .muted{color:var(--muted);font-size:13px}
-    .muted-block{color:var(--muted);font-size:13px;margin-top:8px}
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-    .tier-name{font-size:16px;font-weight:700;margin-bottom:6px}
-    ul{margin:0;padding-left:18px}
-    li{margin-bottom:6px;font-size:14px}
-    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px;padding:18px 0}
+
+    /* Wrapper to center all content and limit width */
+    .wrap {
+      max-width: var(--max-width);
+      margin: 28px auto;
+      padding: 20px;
+    }
+
+    /* HEADER SECTION */
+    header {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .logo {
+      width: 84px;
+      height: 84px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      display: grid;
+      place-items: center;
+      color: white;
+      font-weight: 700;
+      font-size: 20px;
+      box-shadow: 0 6px 20px rgba(31, 106, 63, 0.12);
+    }
+
+    h1 { margin: 0; font-size: 24px; }
+    .sub { color: var(--muted); font-size: 14px; }
+
+    nav {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* Reusable button style for nav links and sponsor buttons */
+    a.btn {
+      text-decoration: none;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: transparent;
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      font-size: 13px;
+      color: var(--accent-dark);
+      transition: background 0.2s, color 0.2s;
+    }
+    a.btn:hover {
+      background: var(--accent-dark);
+      color: white;
+    }
+
+    /* MAIN GRID LAYOUT */
+    main {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+      margin-top: 22px;
+    }
+
+    /* Responsive: stack layout for smaller screens */
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+      .right-col { order: 2; }
+    }
+
+    /* CARD DESIGN */
+    .card {
+      background: var(--card);
+      padding: 16px;
+      border-radius: var(--radius);
+      box-shadow: 0 6px 20px rgba(12, 15, 20, 0.04);
+    }
+
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .muted { color: var(--muted); font-size: 13px; }
+    .muted-block { color: var(--muted); font-size: 13px; margin-top: 8px; }
+
+    /* GRID DISPLAY FOR SPONSORS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .tier-name {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    ul { margin: 0; padding-left: 18px; }
+    li { margin-bottom: 6px; font-size: 14px; }
+
+    /* FOOTER */
+    footer {
+      margin-top: 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 18px 0;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
+    <!-- =========================
+         HEADER SECTION
+         Contains logo, site title, and navigation.
+    ========================== -->
     <header>
       <div class="logo" aria-hidden="true">6198</div>
       <div>
         <h1>Sponsors & Partners</h1>
         <div class="sub">Thank you to the organizations that power FTC Team 6198 at Barrington High School.</div>
+
+        <!-- Main navigation menu -->
         <nav aria-label="Primary navigation">
           <a class="btn" href="index.html">Home</a>
           <a class="btn" href="status.html">Status</a>
           <a class="btn" href="sponsors.html">Sponsors</a>
           <a class="btn" href="events.html">Events</a>
           <a class="btn" href="team.html">Team</a>
+          <!-- Additional future navigation links can be uncommented -->
           <!-- <a class="btn" href="resources.html">Resources</a> -->
           <!-- <a class="btn" href="mentors.html">Mentors</a> -->
         </nav>
       </div>
     </header>
 
+    <!-- =========================
+         MAIN CONTENT AREA
+         Left: Sponsors / Right: Info panels
+    ========================== -->
     <main>
       <section>
+        <!-- SIGNIFICANT SPONSORS SECTION -->
         <article class="card" aria-labelledby="headline-partners">
           <div class="section-title">
             <h2 id="significant-sponsors" style="margin:0;font-size:18px">Significant Sponsors</h2>
             <span class="muted">Decode Season</span>
           </div>
+
+          <!-- Sponsor grid layout -->
           <div class="grid">
+            <!-- Sponsor 1 -->
             <div>
               <div class="tier-name">Rewind Analog (FearlessProductions.TV)</div>
               <p class="muted-block">Level 2 Sponsor | $200.00</p>
+              <!-- Sponsor Button -->
+              <a class="btn" href="https://rewindanalog.com" target="_blank" rel="noopener">Visit Sponsor</a>
+              <a class="btn" href="https://www.fearlessproductions.tv" target="_blank" rel="noopener">Visit Sponsor's Parent Company</a>
             </div>
+
+            <!-- Sponsor 2 -->
             <div>
               <div class="tier-name">Leopardo Construction</div>
               <p class="muted-block">Level 2 Sponsor | $500.00</p>
+              <!-- Sponsor button -->
+              <a class="btn" href="https://leopardo.com" target="_blank" rel="noopener">Visit Sponsor</a>
             </div>
           </div>
         </article>
 
+        <!-- SPONSOR TIERS EXPLANATION -->
         <article class="card" aria-labelledby="sponsor-tiers" style="margin-top:14px">
           <div class="section-title">
             <h2 id="sponsor-tiers" style="margin:0;font-size:18px">Sponsor Tiers</h2>
             <span class="muted">Ways to Give</span>
           </div>
+
+          <!-- Explanation of sponsorship levels -->
           <div class="grid">
             <div>
               <div class="tier-name">Level 1 | $100.00+</div>
               <ul>
-                <li>Logo on flyers & pamplets.</li>
+                <li>Logo on flyers & pamphlets.</li>
                 <li>Social Media Feature!</li>
               </ul>
             </div>
@@ -109,7 +239,7 @@
               </ul>
             </div>
             <div>
-              <div class="tier-name">Level 3 | $500.00</div>
+              <div class="tier-name">Level 3 | $500.00+</div>
               <ul>
                 <li>Level 2 Perks</li>
                 <li>Logo displayed on our team's banners & large boards at competitions.</li>
@@ -119,11 +249,13 @@
           </div>
         </article>
 
+        <!-- IN-KIND DONATIONS SECTION -->
         <article class="card" aria-labelledby="in-kind" style="margin-top:14px">
           <div class="section-title">
             <h2 id="in-kind" style="margin:0;font-size:18px">In-Kind Contributions</h2>
             <span class="muted">Donations & Fundraised</span>
           </div>
+
           <ul>
             <li>[Parts] From [Irtaza's Father's Name]</li>
             <li>$300.00 From Concessions @ BHS Stadium for Filly Football & Varsity Soccer.</li>
@@ -131,31 +263,44 @@
         </article>
       </section>
 
+      <!-- RIGHT COLUMN INFORMATION -->
       <aside class="right-col" style="width:100%">
+        <!-- Become a Sponsor Info Card -->
         <div class="card">
           <div class="section-title">
             <h3 style="margin:0;font-size:16px">Become a Sponsor</h3>
             <span class="muted">Contact</span>
           </div>
-          <p class="muted-block">Email <a href="mailto:Email">Email</a> to negotiate levels & schedule appointment (level 2+ only).</p>
+          <p class="muted-block">
+            Email <a href="mailto:aparikh1@bsd220.org">Anant Parikh</a> to negotiate levels & schedule appointment (level 2+ only).
+          </p>
         </div>
 
+        <!-- Tax Information Card -->
         <div class="card" style="margin-top:14px">
           <div class="section-title">
             <h3 style="margin:0;font-size:16px">Tax Information</h3>
           </div>
-          <p class="muted-block">The BHS Robotics Program is apart of a 501(c)(3) organization.</p>
+          <p class="muted-block">The BHS Robotics Program is part of a 501(c)(3) organization.</p>
         </div>
       </aside>
     </main>
 
+    <!-- FOOTER SECTION -->
     <footer>
-      <div class="small">© <span id="year"></span> FIRST Tech Challenge Team 6198 - Barrington High School Robotics | Barrington School District 220</div>
+      <div class="small">
+        © <span id="year"></span> FIRST Tech Challenge Team 6198 - Barrington High School Robotics | Barrington School District 220
+      </div>
       <div class="small muted">This site is maintained by Anant Parikh.</div>
     </footer>
   </div>
 
+  <!-- =========================
+       SCRIPT SECTION
+       Dynamically updates the year in footer.
+  ========================== -->
   <script>
+    // Automatically display the current year in the footer
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
