@@ -11,13 +11,7 @@
   <meta name="theme-color" content="#1f7a1f" />
 
   <style>
-    /* 
-      ===========================
-      Global Theme & Base Styles
-      ===========================
-      Variables define the main color palette and layout spacing.
-      All styles below ensure consistent visual design and responsive layout.
-    */
+    /* Global Theme & Base Styles */
     :root {
       --accent: #2e8b57;
       --accent-dark: #1f6a3f;
@@ -27,6 +21,17 @@
       --max-width: 1100px;
       --radius: 12px;
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* DARK MODE VARIABLES */
+    body.dark {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #34d399;
+      --accent-dark: #059669;
+      --muted: #9ca3af;
+      color: #f8fafc;
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
     }
 
     /* Reset box model */
@@ -41,7 +46,7 @@
       line-height: 1.45;
     }
 
-    /* Wrapper to center all content and limit width */
+    /* Wrapper for page content */
     .wrap {
       max-width: var(--max-width);
       margin: 28px auto;
@@ -79,7 +84,7 @@
       flex-wrap: wrap;
     }
 
-    /* Reusable button style for nav links and sponsor buttons */
+    /* Reusable button style */
     a.btn {
       text-decoration: none;
       padding: 8px 12px;
@@ -95,7 +100,23 @@
       color: white;
     }
 
-    /* MAIN GRID LAYOUT */
+    /* DARK MODE TOGGLE BUTTON */
+    .dark-toggle {
+      margin-left: auto;
+      background: var(--accent-dark);
+      border: none;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: 0.2s;
+    }
+    .dark-toggle:hover {
+      background: var(--accent);
+    }
+
+    /* MAIN LAYOUT */
     main {
       display: grid;
       grid-template-columns: 1fr 320px;
@@ -103,7 +124,6 @@
       margin-top: 22px;
     }
 
-    /* Responsive: stack layout for smaller screens */
     @media (max-width: 900px) {
       main { grid-template-columns: 1fr; }
       .right-col { order: 2; }
@@ -115,6 +135,7 @@
       padding: 16px;
       border-radius: var(--radius);
       box-shadow: 0 6px 20px rgba(12, 15, 20, 0.04);
+      transition: background 0.3s, color 0.3s;
     }
 
     .section-title {
@@ -127,7 +148,7 @@
     .muted { color: var(--muted); font-size: 13px; }
     .muted-block { color: var(--muted); font-size: 13px; margin-top: 8px; }
 
-    /* GRID DISPLAY FOR SPONSORS */
+    /* Sponsor grid layout */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -143,7 +164,7 @@
     ul { margin: 0; padding-left: 18px; }
     li { margin-bottom: 6px; font-size: 14px; }
 
-    /* FOOTER */
+    /* FOOTER SECTION */
     footer {
       margin-top: 22px;
       text-align: center;
@@ -156,17 +177,14 @@
 
 <body>
   <div class="wrap">
-    <!-- =========================
-         HEADER SECTION
-         Contains logo, site title, and navigation.
-    ========================== -->
+    <!-- HEADER -->
     <header>
       <div class="logo" aria-hidden="true">6198</div>
       <div>
         <h1>Sponsors & Partners</h1>
         <div class="sub">Thank you to the organizations that power FTC Team 6198 at Barrington High School.</div>
 
-        <!-- Main navigation menu -->
+        <!-- Main navigation -->
         <nav aria-label="Primary navigation">
           <a class="btn" href="index.html">Home</a>
           <a class="btn" href="status.html">Status</a>
@@ -178,50 +196,42 @@
           <!-- <a class="btn" href="mentors.html">Mentors</a> -->
         </nav>
       </div>
+
+      <!-- 🌙 DARK MODE TOGGLE BUTTON -->
+      <button id="darkModeToggle" class="dark-toggle">🌙</button>
     </header>
 
-    <!-- =========================
-         MAIN CONTENT AREA
-         Left: Sponsors / Right: Info panels
-    ========================== -->
+    <!-- MAIN CONTENT -->
     <main>
+      <!-- LEFT: Sponsor Info -->
       <section>
-        <!-- SIGNIFICANT SPONSORS SECTION -->
-        <article class="card" aria-labelledby="headline-partners">
+        <article class="card">
           <div class="section-title">
-            <h2 id="significant-sponsors" style="margin:0;font-size:18px">Significant Sponsors</h2>
+            <h2 style="margin:0;font-size:18px">Significant Sponsors</h2>
             <span class="muted">Decode Season</span>
           </div>
 
-          <!-- Sponsor grid layout -->
           <div class="grid">
-            <!-- Sponsor 1 -->
             <div>
               <div class="tier-name">Rewind Analog (FearlessProductions.TV)</div>
               <p class="muted-block">Level 2 Sponsor | $200.00</p>
-              <!-- Sponsor Button -->
               <a class="btn" href="https://rewindanalog.com" target="_blank" rel="noopener">Visit Sponsor</a>
-              <a class="btn" href="https://www.fearlessproductions.tv" target="_blank" rel="noopener">Visit Sponsor's Parent Company</a>
+              <a class="btn" href="https://www.fearlessproductions.tv" target="_blank" rel="noopener">Parent Company</a>
             </div>
-
-            <!-- Sponsor 2 -->
             <div>
               <div class="tier-name">Leopardo Construction</div>
               <p class="muted-block">Level 2 Sponsor | $500.00</p>
-              <!-- Sponsor button -->
               <a class="btn" href="https://leopardo.com" target="_blank" rel="noopener">Visit Sponsor</a>
             </div>
           </div>
         </article>
 
-        <!-- SPONSOR TIERS EXPLANATION -->
-        <article class="card" aria-labelledby="sponsor-tiers" style="margin-top:14px">
+        <article class="card" style="margin-top:14px">
           <div class="section-title">
-            <h2 id="sponsor-tiers" style="margin:0;font-size:18px">Sponsor Tiers</h2>
+            <h2 style="margin:0;font-size:18px">Sponsor Tiers</h2>
             <span class="muted">Ways to Give</span>
           </div>
 
-          <!-- Explanation of sponsorship levels -->
           <div class="grid">
             <div>
               <div class="tier-name">Level 1 | $100.00+</div>
@@ -234,49 +244,45 @@
               <div class="tier-name">Level 2 | $250.00+</div>
               <ul>
                 <li>Level 1 Perks</li>
-                <li>Logo prominently displayed on our robot.</li>
-                <li>Scheduled Appointment w/ our Team.</li>
+                <li>Logo displayed on our robot.</li>
+                <li>Appointment with our team.</li>
               </ul>
             </div>
             <div>
               <div class="tier-name">Level 3 | $500.00+</div>
               <ul>
                 <li>Level 2 Perks</li>
-                <li>Logo displayed on our team's banners & large boards at competitions.</li>
-                <li>Tailored Progress Update Emails</li>
+                <li>Logo on banners & competition boards.</li>
+                <li>Progress Update Emails</li>
               </ul>
             </div>
           </div>
         </article>
 
-        <!-- IN-KIND DONATIONS SECTION -->
-        <article class="card" aria-labelledby="in-kind" style="margin-top:14px">
+        <article class="card" style="margin-top:14px">
           <div class="section-title">
-            <h2 id="in-kind" style="margin:0;font-size:18px">In-Kind Contributions</h2>
+            <h2 style="margin:0;font-size:18px">In-Kind Contributions</h2>
             <span class="muted">Donations & Fundraised</span>
           </div>
-
           <ul>
-            <li>[Parts] From [Irtaza's Father's Name]</li>
-            <li>$300.00 From Concessions @ BHS Stadium for Filly Football & Varsity Soccer.</li>
+            <li>[Parts] From [Irtaza's Father]</li>
+            <li>$300.00 from concessions @ BHS Stadium (Filly Football & Varsity Soccer)</li>
           </ul>
         </article>
       </section>
 
-      <!-- RIGHT COLUMN INFORMATION -->
+      <!-- RIGHT: Info Panels -->
       <aside class="right-col" style="width:100%">
-        <!-- Become a Sponsor Info Card -->
         <div class="card">
           <div class="section-title">
             <h3 style="margin:0;font-size:16px">Become a Sponsor</h3>
             <span class="muted">Contact</span>
           </div>
           <p class="muted-block">
-            Email <a href="mailto:aparikh1@bsd220.org">Anant Parikh</a> to negotiate levels & schedule appointment (level 2+ only).
+            Email <a href="mailto:aparikh1@bsd220.org">Anant Parikh</a> to negotiate levels & appointments (Level 2+).
           </p>
         </div>
 
-        <!-- Tax Information Card -->
         <div class="card" style="margin-top:14px">
           <div class="section-title">
             <h3 style="margin:0;font-size:16px">Tax Information</h3>
@@ -286,7 +292,7 @@
       </aside>
     </main>
 
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer>
       <div class="small">
         © <span id="year"></span> FIRST Tech Challenge Team 6198 - Barrington High School Robotics | Barrington School District 220
@@ -295,13 +301,17 @@
     </footer>
   </div>
 
-  <!-- =========================
-       SCRIPT SECTION
-       Dynamically updates the year in footer.
-  ========================== -->
   <script>
-    // Automatically display the current year in the footer
+    // Auto-update the footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // DARK MODE TOGGLE FUNCTIONALITY
+    const toggleBtn = document.getElementById('darkModeToggle');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+    });
   </script>
 </body>
 </html>
+
