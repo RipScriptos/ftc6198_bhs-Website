@@ -1,14 +1,32 @@
 <!doctype html>
 <html lang="en">
+  <!-- Remember To Edit Comments-->
 <head>
+  <!-- 
+    EVENTS PAGE — FTC BHS Robotics Team 6198
+    -------------------------------------------------
+    Purpose: Displays upcoming events, team schedule,
+    season timeline, gallery, and quick resource links.
+    Style: Simple responsive layout using CSS Grid.
+    Maintainer: Anant Parikh
+  -->
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Events | FTC BHS Robotics Team 6198</title>
-  <meta name="description" content="Upcoming competition dates and outreach engagement datess for FTC BHS Robotics Team 6198." />
+  <meta name="description" content="Upcoming competition dates and outreach engagement dates for FTC BHS Robotics Team 6198." />
   <meta property="og:title" content="Events | FTC BHS Robotics Team 6198" />
-  <meta property="og:description" content="Stay informed about competition dates and outreach engagement dates from Barrington High School's FTC Robotics Team 6198." />
+  <meta property="og:description" content="Stay informed about competition dates and outreach engagement events from Barrington High School's FTC Robotics Team 6198." />
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#1f7a1f" />
+
+  <!-- 
+    ============================
+    GLOBAL STYLES / THEME COLORS
+    ============================
+    Uses a soft green-accented color palette.
+    Layouts are responsive with flexible widths.
+  -->
   <style>
     :root{
       --accent:#2e8b57;
@@ -31,14 +49,26 @@
     }
     .wrap{max-width:var(--max-width);margin:28px auto;padding:20px;}
     header{display:flex;gap:16px;align-items:center;margin-bottom:18px;}
-    .logo{width:84px;height:84px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));display:grid;place-items:center;color:white;font-weight:700;font-size:20px;box-shadow:0 6px 20px rgba(31,106,63,0.12);}
+    .logo{
+      width:84px;height:84px;border-radius:10px;
+      background:linear-gradient(135deg,var(--accent),var(--accent-dark));
+      display:grid;place-items:center;color:white;font-weight:700;font-size:20px;
+      box-shadow:0 6px 20px rgba(31,106,63,0.12);
+    }
     h1{margin:0;font-size:24px}
     .sub{color:var(--muted);font-size:14px}
     nav{margin-top:12px;display:flex;gap:8px;flex-wrap:wrap}
-    a.btn{text-decoration:none;padding:8px 12px;border-radius:10px;background:transparent;border:1px solid rgba(15,23,42,0.06);font-size:13px;color:var(--accent-dark);}
+    a.btn{
+      text-decoration:none;padding:8px 12px;border-radius:10px;
+      background:transparent;border:1px solid rgba(15,23,42,0.06);
+      font-size:13px;color:var(--accent-dark);
+    }
     main{display:grid;grid-template-columns:1fr 320px;gap:20px;margin-top:22px}
     @media (max-width:900px){main{grid-template-columns:1fr}.right-col{order:2}}
-    .card{background:var(--card);padding:16px;border-radius:var(--radius);box-shadow:0 6px 20px rgba(12,15,20,0.04)}
+    .card{
+      background:var(--card);padding:16px;border-radius:var(--radius);
+      box-shadow:0 6px 20px rgba(12,15,20,0.04)
+    }
     .section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
     .muted{color:var(--muted);font-size:13px}
     .muted-block{color:var(--muted);font-size:13px;margin-top:8px}
@@ -53,42 +83,50 @@
     footer{margin-top:22px;text-align:center;color:var(--muted);font-size:13px;padding:18px 0}
   </style>
 </head>
+
 <body>
   <div class="wrap">
+    <!-- ===== HEADER SECTION ===== -->
     <header>
       <div class="logo" aria-hidden="true">6198</div>
       <div>
         <h1>Events & Outreach</h1>
         <div class="sub">Competition calendar, scrimmages, and community appearances for Team 6198.</div>
+
+        <!-- Navigation bar for internal site pages -->
         <nav aria-label="Primary navigation">
           <a class="btn" href="index.html">Home</a>
           <a class="btn" href="status.html">Status</a>
           <a class="btn" href="sponsors.html">Sponsors</a>
           <a class="btn" href="events.html">Events</a>
           <a class="btn" href="team.html">Team</a>
+          <!-- Uncomment if future pages are added -->
           <!-- <a class="btn" href="resources.html">Resources</a> -->
           <!-- <a class="btn" href="mentors.html">Mentors</a> -->
         </nav>
       </div>
     </header>
 
+    <!-- ===== MAIN CONTENT AREA ===== -->
     <main>
       <section>
+        <!-- UPCOMING EVENTS LIST -->
         <article class="card" aria-labelledby="upcoming">
           <div class="section-title">
             <h2 id="upcoming" style="margin:0;font-size:18px">Upcoming Schedule</h2>
             <span class="muted">Events Included</span>
           </div>
           <ul>
-            <li><strong>Team Meeting Sessions —</strong> Everyday Afterschool Until 4:30 PM Unless Otherwise Noted</li>
-            <li><strong>Sponsor Meetings —</strong> Schedule An Appointment Via Emailing Our Lead Sponsorship Manager or Contacting Our Instagram</li>
-            <li><strong>League Meet 1 —</strong> 7:00 AM ~ 2 PM - Saturday, Novbember 15th - BHS</li>
-            <li><strong>League Meet 2 —</strong> 7:00 AM ~ 2 PM - Saturday, December 13th - Cary Grove HS</li>
-            <li><strong>League Meet 3 —</strong> 7:00 AM ~ 2 PM - Saturday, January 17th - Crystal Lake South HS</li>
-            <li><strong>League Championship —</strong> 6:00 AM ~ 8 PM - Saturday, Febuary 21st - Harvest Christian Academy</li>
+            <li><strong>Team Meeting Sessions —</strong> Every day after school until 4:30 PM unless otherwise noted</li>
+            <li><strong>Sponsor Meetings —</strong> Schedule an appointment via emailing our Lead Sponsorship Manager or by contacting our Instagram</li>
+            <li><strong>League Meet 1 —</strong> 7:00 AM ~ 2:00 PM – Saturday, November 15th – BHS</li>
+            <li><strong>League Meet 2 —</strong> 7:00 AM ~ 2:00 PM – Saturday, December 13th – Cary-Grove HS</li>
+            <li><strong>League Meet 3 —</strong> 7:00 AM ~ 2:00 PM – Saturday, January 17th – Crystal Lake South HS</li>
+            <li><strong>League Championship —</strong> 6:00 AM ~ 8:00 PM – Saturday, February 21st – Harvest Christian Academy</li>
           </ul>
         </article>
 
+        <!-- SEASON TIMELINE (MONTHLY MILESTONES) -->
         <article class="card" aria-labelledby="season-timeline" style="margin-top:14px">
           <div class="section-title">
             <h2 id="season-timeline" style="margin:0;font-size:18px">Season Timeline</h2>
@@ -97,45 +135,53 @@
           <div class="timeline">
             <div class="timeline-item">
               <strong>September</strong>
-              <p class="muted-block">Focus on fundraising & obtaining sponsorships to fuel initial endeavors.</p>
+              <p class="muted-block">Focus on fundraising and obtaining sponsorships to support early season efforts.</p>
             </div>
             <div class="timeline-item">
               <strong>October</strong>
-              <p class="muted-block">Begin programming & build a functionable intake system. Happy Halloween :3</p>
+              <p class="muted-block">Begin programming and build a functional intake system. Happy Halloween! 🎃</p>
             </div>
             <div class="timeline-item">
               <strong>November</strong>
-              <p class="muted-block">Complete out-take system before League Meet 1 & proceed to establish a digital personality. Happy Thanksgiving :)</p>
+              <p class="muted-block">Finalize the outtake system before League Meet 1 and continue developing the team’s digital presence.</p>
             </div>
             <div class="timeline-item">
               <strong>December</strong>
-              <p class="muted-block">League Meet 2 and Merry Christmas :D</p>
+              <p class="muted-block">Compete in League Meet 2. Merry Christmas! 🎄</p>
             </div>
           </div>
         </article>
 
+        <!-- GALLERY SECTION (PHOTOS FROM EVENTS) -->
         <article class="card" id="gallery" aria-labelledby="gallery-heading" style="margin-top:14px">
           <div class="section-title">
             <h2 id="gallery-heading" style="margin:0;font-size:18px">Photo Gallery</h2>
             <span class="muted">Highlights</span>
           </div>
+
           <div class="gallery" role="list">
-            <!-- Add Images With Format: <img src="Image Link" alt="Image Caption" /> -->
-            <p class="muted-block">No Images Yet</p>
+            <!-- To add new images, follow the format below:
+                 <img src="ImageLink" alt="Description of Image" /> -->
+            <p class="muted-block">No images yet</p>
           </div>
-          <!-- Update Email -->
+
+          <!-- Submission email for gallery photos -->
           <p class="muted-block">Submit event photos to <a href="mailto:Email">Email</a> for inclusion.</p>
         </article>
       </section>
 
+      <!-- ===== SIDEBAR / RIGHT COLUMN ===== -->
       <aside class="right-col" style="width:100%">
+        <!-- VOLUNTEER SIGN-UP SECTION -->
         <div class="card">
           <div class="section-title">
             <h3 style="margin:0;font-size:16px">Volunteer</h3>
             <span class="muted">Sign Up</span>
           </div>
+          <!-- Placeholder for volunteer sign-up form or link -->
         </div>
 
+        <!-- EVENT CHECKLIST -->
         <div class="card" style="margin-top:14px">
           <div class="section-title">
             <h3 style="margin:0;font-size:16px">Event Prep Checklist</h3>
@@ -143,30 +189,33 @@
           <ul>
             <li>Team & Yourself</li>
             <li>Robot</li>
-            <li>Gracious Professionalistic Mindset</li>
+            <li>Gracious Professionalism Mindset</li>
             <li>Safety</li>
           </ul>
         </div>
 
+        <!-- STREAM LINKS AND RESULTS -->
         <div class="card" style="margin-top:14px">
           <div class="section-title">
             <h3 style="margin:0;font-size:16px">Streaming & Results</h3>
           </div>
           <ul>
-            <!-- Validate Links & Maybe Alter Links -->
+            <!-- Verify links annually to ensure accuracy -->
             <li><a href="https://ftc-events.firstinspires.org/" target="_blank" rel="noopener">FTC Event Results</a></li>
-            <li><a href="https://www.twitch.tv/firstinspires" target="_blank" rel="noopener">FIRSTinspires Twitch</a></li>
+            <li><a href="https://www.twitch.tv/firstinspires" target="_blank" rel="noopener">FIRST Inspires Twitch</a></li>
           </ul>
         </div>
       </aside>
     </main>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
       <div class="small">© <span id="year"></span> FIRST Tech Challenge Team 6198 - Barrington High School Robotics | Barrington School District 220</div>
       <div class="small muted">This site is maintained by Anant Parikh.</div>
     </footer>
   </div>
 
+  <!-- Auto-updates footer year dynamically -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
