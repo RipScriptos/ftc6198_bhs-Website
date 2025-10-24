@@ -12,10 +12,9 @@
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#1f7a1f" />
   
-  <!-- GLOBAL STYLES / THEME COLORS - Includes light and dark mode using CSS variables. -->
   <style>
+    /* Global Theme & Base Styles*/
     :root {
-      /* Light Mode Colors */
       --accent: #2e8b57;
       --accent-dark: #1f6a3f;
       --muted: #6b7280;
@@ -28,13 +27,14 @@
     }
 
     /* DARK MODE THEME VARIABLES */
-    [data-theme="dark"] {
+    body.dark {
+      --bg: #0f172a;
+      --card: #1e293b;
       --accent: #34d399;
       --accent-dark: #059669;
       --muted: #9ca3af;
-      --bg: #0f172a;
-      --card: #1e293b;
-      --text: #f8fafc;
+      color: #f8fafc;
+      background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
     }
 
     * { box-sizing: border-box; }
