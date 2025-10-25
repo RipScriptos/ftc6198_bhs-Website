@@ -295,9 +295,18 @@
 
     // DARK MODE TOGGLE FUNCTIONALITY
     const toggleBtn = document.getElementById('darkModeToggle');
+    const applyTheme = (theme) => {
+      const isDark = theme === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      document.body.classList.toggle('dark', isDark);
+      toggleBtn.textContent = isDark ? '☀️' : '🌙';
+    };
+    const savedTheme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+    applyTheme(savedTheme);
     toggleBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+      const nextTheme = document.body.classList.contains('dark') ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      localStorage.setItem('theme', nextTheme);
     });
 
     // small client-side helper: add roster rows (if needed)

@@ -290,17 +290,18 @@
     // Dark mode toggle
     const darkToggle = document.getElementById('darkToggle');
     const html = document.documentElement;
-
-    // Load saved theme
-    if (localStorage.getItem('theme') === 'dark') {
-      html.setAttribute('data-theme', 'dark');
-    }
-
-    // Toggle between light/dark
+    const applyTheme = (theme) => {
+      const isDark = theme === 'dark';
+      html.setAttribute('data-theme', isDark ? 'dark' : 'light');
+      document.body.classList.toggle('dark', isDark);
+      darkToggle.textContent = isDark ? '☀️' : '🌙';
+    };
+    const savedTheme = localStorage.getItem('theme') === 'dark' ? 'dark' : 'light';
+    applyTheme(savedTheme);
     darkToggle.addEventListener('click', () => {
-      const isDark = html.getAttribute('data-theme') === 'dark';
-      html.setAttribute('data-theme', isDark ? 'light' : 'dark');
-      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      const nextTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      localStorage.setItem('theme', nextTheme);
     });
   </script>
 </body>
