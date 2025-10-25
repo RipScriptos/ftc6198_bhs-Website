@@ -130,7 +130,7 @@
     .muted-block { color: var(--muted); font-size: 13px; margin-top: 8px; }
 
     /* Team Grid & Flip Card Design */
-    .team-grid {
+    .mentor-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 18px;
@@ -138,7 +138,7 @@
       text-align: center;
     }
 
-    .team-member { perspective: 1000px; cursor: pointer; }
+    .team-mentor { perspective: 1000px; cursor: pointer; }
     .flip-inner {
       position: relative;
       width: 100%;
@@ -146,8 +146,8 @@
       transition: transform 0.6s;
       transform-style: preserve-3d;
     }
-    .team-member:hover .flip-inner,
-    .team-member.flipped .flip-inner {
+    .team-mentor:hover .flip-inner,
+    .team-mentor.flipped .flip-inner {
       transform: rotateY(180deg);
     }
 
@@ -172,20 +172,20 @@
     }
 
     /* Typography for Team Cards */
-    .team-member img {
+    .team-mentor img {
       width: 100%;
       max-width: 140px;
       height: auto;
       border-radius: 8px;
       margin: 10px auto;
     }
-    .team-member h3 {
+    .team-mentor h3 {
       margin: 6px 0 4px;
       font-size: 16px;
       color: var(--text);
     }
     .flip-back h3 { color: white; margin-bottom: 6px; }
-    .team-member p {
+    .team-mentor p {
       margin: 0;
       font-size: 13px;
       color: var(--muted);
@@ -233,9 +233,9 @@
             <h2 style="margin:0;font-size:18px">Decode Season Team Mentors</h2>
           </div>
 
-          <!-- Team Grid (Flip Cards) -->
-          <div class="team-grid">
-            <!-- Team Member Cards (Alphabetically Ordered) -->
+          <!-- Team Mentor Grid (Flip Cards) -->
+          <div class="mentor-grid">
+            <!-- Team Mentor Cards (Alphabetically Ordered Soon) -->
             <div class="team-mentor"><div class="flip-inner"><div class="flip-front"><h3>AJ Priola</h3><img src="images/aj_priola.jpg" alt="AJ Priola"><p><strong>Expertise:</strong> Engineering & FIRST</p></div><div class="flip-back"><h3>AJ Priola</h3><p>Assist in advising our team.</p></div></div></div>
             <div class="team-mentor"><div class="flip-inner"><div class="flip-front"><h3>Mr.Priola</h3><img src="images/mr_priola.jpg" alt="Mr.Priola"><p><strong>Expertise:</strong> Management & FIRST</p></div><div class="flip-back"><h3>Mr.Priola</h3><p>Keeps our team on tasks.</p></div></div></div>
             <div class="team-mentor"><div class="flip-inner"><div class="flip-front"><h3>Mr.Name</h3><img src="images/name.jpg" alt="Mr.Name"><p><strong>Expertise:</strong> Management & Robotics</p></div><div class="flip-back"><h3>Mr.Name</h3><p>Manages our teams focus.</p></div></div></div>
@@ -279,7 +279,7 @@
     // Team card flipping logic (supports mobile + click)
     document.addEventListener('click', (event) => {
       const clickedCard = event.target.closest('.team-member');
-      document.querySelectorAll('.team-member.flipped').forEach(card => {
+      document.querySelectorAll('.team-mentor.flipped').forEach(card => {
         if (card !== clickedCard) card.classList.remove('flipped');
       });
       if (clickedCard) clickedCard.classList.toggle('flipped');
